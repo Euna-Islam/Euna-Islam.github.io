@@ -2,11 +2,12 @@
 body {
   margin: 0;
   font-family: Arial, sans-serif;
+  background: #f0edee;
 }
 
 /* Styles for the header */
 .main-header {
-  position: sticky;
+  /*position: sticky;*/
   top: 0;
   background-color: #333; /* Adjust background color as needed */
   color: #fff; /* Adjust text color as needed */
@@ -19,25 +20,46 @@ body {
   margin: 0;
 }
 
-nav ul {
+.about-me {
+	margin: 2%;
+    text-align: center;
+}
+
+.main-header nav ul {
   list-style: none;
   padding: 0;
   margin: 0;
 }
 
-nav ul li {
+.main-header nav ul li {
   display: inline;
   margin-right: 20px;
 }
 
-nav ul li a {
-  color: #fff;
+.main-header nav ul li a {
+  color: #000;
+  text-decoration: none;
+}
+
+#projects nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+#projects nav ul li {
+  display: inline;
+  margin-right: 20px;
+}
+
+#projects nav ul li a {
+  color: #080808;
   text-decoration: none;
 }
 
 /* Style the sections */
 section {
-  padding: 50px 0;
+  padding: 5px 0;
   text-align: center;
   /* Add more styles for each section as needed */
 }
