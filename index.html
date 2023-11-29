@@ -1,45 +1,91 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Euna's Portfolio</title>
+  <meta charset="UTF-8">
+  <title>Euna's Portfolio</title>
+  <link rel="stylesheet" href="css/styles.css"> <!-- Link your CSS file -->
 </head>
 <body>
-    <header>
-        <h1>About Me</h1>
-        Developer
-    </header>
 
-    <main>
-        <section id="projects">
-            <h2>Projects</h2>
+<header class="main-header">
+  <h1>Euna Islam</h1>
+  <nav>
+    <ul>
+	  <li><a href="#projects">Projects</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+<section id="projects">
+  <div class="project">
+		<h2>Projects</h2>
+		<p> Browse through a selection of projects </p>
 
-            <!-- First Project -->
-            <div class="project">
-                <h3>Space Cricket</h3>
-                <div class="video">
-                    <!-- Video Integration -->
-                    <iframe width="560" height="315" src="https://www.youtube.com/shorts/Ty-LMJ0NZ8k" frameborder="0" allowfullscreen></iframe>
-                </div>
-                <div class="code">
-                    <!-- Code Snippet -->
-                    <pre><code>
-//  code snippet here
-                    </code></pre>
-                </div>
-                <div class="contribution">
-                    <!-- Your Contribution -->
-                    <p>Your contribution description here.</p>
-                </div>
-            </div>
+		<h3>Space Cricket</h3>
+		
+		<div class="video">
+			<!-- Video Integration -->
+			<iframe width="560" height="315" src="https://www.youtube.com/embed/Ty-LMJ0NZ8k" frameborder="0" allowfullscreen></iframe>
+		</div>
+		<div class="contribution">
+			<!-- Your Contribution -->
+			<h3>Contribution</h3>
+			<ul>
+			  <li>Designed and implemented modular, decoupled architecture.</li>
+			  <li>Led the development from concept to completion, overseeing all phases of production.</li>
+			  <li>Ensured codebase adherence to clean coding principles</li>
+			  <li>Managed build processes and successfully deployed the game to the Play Store</li>
+			  <!-- Add more contributions as needed -->
+			</ul>
+		</div>
+    </div>
+</section>
 
-            <!-- Repeat the above structure for each project -->
-            
-        </section>
-    </main>
+<!-- Sections for Skills, Projects, and Contact -->
+<section id="skills">
+  <!-- Skills section -->
+  <h2>Skills</h2>
 
-    <footer>
-        <!-- Footer content if needed -->
-    </footer>
+  <div class="skill-category">
+    <h3>Game Development</h3>
+    <ul>
+      <li>Unity</li>
+      <li>C#</li>
+      <li>Scriptable Objects</li>
+      <li>Unity Event</li>
+      <li>Game Physics</li>
+      <li>Code Optimization</li>
+    </ul>
+  </div>
+
+  <div class="skill-category">
+    <h3>Software Development</h3>
+    <ul>
+      <li>SOLID Principles</li>
+      <li>Data Structures & Algorithms</li>
+      <li>Design Patterns</li>
+      <li>Object Oriented Programming</li>
+      <li>Clean, Modular, Documented Code</li>
+    </ul>
+  </div>
+
+  <div class="skill-category">
+    <h3>Other Skills</h3>
+    <ul>
+      <li>Game Prototyping</li>
+      <li>Git</li>
+      <li>Agile Development</li>
+      <li>Jira</li>
+      <li>Redmine</li>
+      <!-- Add more skills as needed -->
+    </ul>
+  </div>
+</section>
+
+<section id="contact">
+  <!-- Content for Contact section -->
+</section>
+
 </body>
 </html>

@@ -1,0 +1,77 @@
+/* Basic reset and body styles */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+/* Styles for the header */
+.main-header {
+  position: sticky;
+  top: 0;
+  background-color: #333; /* Adjust background color as needed */
+  color: #fff; /* Adjust text color as needed */
+  padding: 20px;
+  text-align: center;
+  z-index: 1000; /* Ensure it's above other elements */
+}
+
+.main-header h1 {
+  margin: 0;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+nav ul li {
+  display: inline;
+  margin-right: 20px;
+}
+
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+}
+
+/* Style the sections */
+section {
+  padding: 50px 0;
+  text-align: center;
+  /* Add more styles for each section as needed */
+}
+
+
+/* Style for the contribution section */
+.contribution {
+  text-align: left; /* Align text to the left */
+  margin: 20px; /* Add margin for spacing */
+  padding: 0% 25%;
+}
+
+.contribution h3 {
+  text-align: center; /* Center-align the heading */
+}
+
+.contribution ul {
+  list-style-type: square; /* Change bullet style to square */
+  padding-left: 20px; /* Add padding to the left for the bullets */
+}
+
+
+/* Style for the skills section */
+.skill-category {
+  text-align: left; /* Align text to the left */
+  margin: 20px; /* Add margin for spacing */
+  padding: 0% 25%;
+}
+
+.skill-category h3 {
+  text-align: center; /* Center-align the heading */
+}
+
+.skill-category ul {
+  list-style-type: square; /* Change bullet style to square */
+  padding-left: 20px; /* Add padding to the left for the bullets */
+}
