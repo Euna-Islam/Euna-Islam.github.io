@@ -49,9 +49,10 @@ h1, h2, h3, h4, h5, h6 {
 # Header
 --------------------------------------------------------------*/
 #header {
+  padding-top: 2%;
   transition: ease-in-out 0s;
   position: relative;
-  height: 100vh;
+  /* height: 100vh; */
   display: flex;
   align-items: center;
   z-index: 997;
@@ -281,6 +282,10 @@ h1, h2, h3, h4, h5, h6 {
 
 #header.header-top .social-links, #header.header-top h2 {
   display: none;
+}
+
+.disable {
+  display: none !important;
 }
 
 #header.header-top h1 {
@@ -1136,4 +1141,13 @@ section .container {
 /* Dynamically set the width of the filled portion based on data-percent attribute */
 .percentage-bar::after {
   width: attr(data-percent, %);
+}
+
+
+.section-name {
+	text-align: center;
+}
+
+.top-projects .row {
+	margin-top: 2%;
 }

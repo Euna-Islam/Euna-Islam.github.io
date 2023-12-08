@@ -9,6 +9,7 @@
 
   // Nav Menu
   $(document).on('click', '.nav-menu a, .mobile-nav a', function(e) {
+	  	  
     if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
       var hash = this.hash;
       var target = $(hash);
@@ -22,12 +23,14 @@
 
         if (hash == '#header') {
           $('#header').removeClass('header-top');
+		  $('#top-projects').removeClass('disable');
           $("section").removeClass('section-show');
           return;
         }
 
         if (!$('#header').hasClass('header-top')) {
           $('#header').addClass('header-top');
+		  $('#top-projects').addClass('disable');
           setTimeout(function() {
             $("section").removeClass('section-show');
             $(hash).addClass('section-show');
