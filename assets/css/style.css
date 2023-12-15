@@ -98,6 +98,7 @@ h1, h2, h3, h4, h5, h6 {
 #header .social-links {
   margin-top: 40px;
   display: flex;
+  float: right;
 }
 
 #header .social-links a {
@@ -142,6 +143,7 @@ h1, h2, h3, h4, h5, h6 {
 /* Desktop Navigation */
 .nav-menu {
   margin-top: 35px;
+  float: right;
 }
 
 .nav-menu ul {
@@ -280,7 +282,8 @@ h1, h2, h3, h4, h5, h6 {
   background: #09203a;
 }
 
-#header.header-top .social-links, #header.header-top h2 {
+/* #header.header-top .social-links, */
+#header.header-top h2 {
   display: none;
 }
 
@@ -1146,6 +1149,14 @@ section .container {
 
 .section-name {
 	text-align: center;
+}
+
+.top-projects {
+	margin-top: 4%;
+}
+
+.portfolio {
+	margin-top: 4%;
 }
 
 .top-projects .row {

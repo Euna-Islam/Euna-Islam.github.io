@@ -21,24 +21,18 @@
           $(this).closest('li').addClass('active');
         }
 
-        if (hash == '#header') {
+/*         if (hash == '#header') {
           $('#header').removeClass('header-top');
 		  $('#top-projects').removeClass('disable');
           $("section").removeClass('section-show');
           return;
         }
-
-        if (!$('#header').hasClass('header-top')) {
-          $('#header').addClass('header-top');
-		  $('#top-projects').addClass('disable');
-          setTimeout(function() {
-            $("section").removeClass('section-show');
-            $(hash).addClass('section-show');
-          }, 350);
-        } else {
+*/
+console.log(hash);
+        if ($('#header').hasClass('header-top')) {
           $("section").removeClass('section-show');
           $(hash).addClass('section-show');
-        }
+        } 
 
         if ($('body').hasClass('mobile-nav-active')) {
           $('body').removeClass('mobile-nav-active');
