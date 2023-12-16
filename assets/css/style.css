@@ -8,6 +8,21 @@
 /*--------------------------------------------------------------
 # General
 --------------------------------------------------------------*/
+
+.floating-div {
+  font-size: 1.2rem;
+    position: fixed;
+    top: 50%;
+    left: 0px;
+    transform: translateY(-50%);
+    width: 32px;
+    height: 88px;
+    z-index: 1000;
+    background: #092037;
+    text-align: center;
+    border-radius: 10px;
+}
+
 body {
   font-family: "Open Sans", sans-serif;
   color: #fff;
