@@ -8,6 +8,38 @@
 /*--------------------------------------------------------------
 # General
 --------------------------------------------------------------*/
+#expandableDiv {
+      display: none;
+      height: 0;
+      overflow: hidden;
+      transition: height 0.3s ease; /* Adding a smooth transition effect */
+      background-color: lightgray;
+      padding: 10px;
+}
+	
+.code-sample {
+  background-color: #f9f9f9;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 20px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.project-body {
+	margin-top: 5vh;
+}
+.project-name {
+	text-align: center;
+	color: white;
+}
+
+.project-stack {
+	float: left;
+}
+.project-pic {
+	float: right;
+}
 
 .floating-div {
   font-size: 1.2rem;
