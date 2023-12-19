@@ -132,14 +132,15 @@ h1, h2, h3, h4, h5, h6 {
   transition: ease-in-out 0s;
 }
 
-#header h1 {
-  font-size: 48px;
-  margin-top: 0px;
-  padding: 0;
-  line-height: 1;
-  font-weight: 700;
-  font-family: "Poppins", sans-serif;
-}
+    #header h1 {
+        font-size: 48px;
+        margin-top: 0px;
+        padding: 0;
+        line-height: 1;
+        font-weight: 700;
+        font-family: "Poppins", sans-serif;
+        margin-left: 5vw;
+    }
 
 #header h1 a, #header h1 a:hover {
   color: #dee2e6;
@@ -368,10 +369,12 @@ h1, h2, h3, h4, h5, h6 {
 #header.header-top .container {
   display: flex;
   align-items: center;
+
 }
 
 #header.header-top .nav-menu {
   margin: 0;
+  padding-right: 2%;
 }
 
 @media (max-width: 768px) {
