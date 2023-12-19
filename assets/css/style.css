@@ -8,17 +8,27 @@
 /*--------------------------------------------------------------
 # General
 --------------------------------------------------------------*/
+.portfolio-button {
 
-.progress {
-    display: -webkit-box !important;
-    display: -ms-flexbox !important;
-    display: flex !important;
-    height: 1rem !important;
-    overflow: hidden !important;
-    font-size: .75rem !important;
-    background-color: #F6F3ED !important;
-    border-radius: 0.25rem !important;
+    color: #12d640;
+    padding: 0.5em 1em;
+    border-radius: 1em;
 }
+    .portfolio-button:hover {
+        background-color: #12d640;
+        color: white;
+    }
+
+    .progress {
+        display: -webkit-box !important;
+        display: -ms-flexbox !important;
+        display: flex !important;
+        height: 1rem !important;
+        overflow: hidden !important;
+        font-size: .75rem !important;
+        background-color: #F6F3ED !important;
+        border-radius: 0.25rem !important;
+    }
 
 .code-button {
     background-color: #17293b;
@@ -34,8 +44,8 @@
       height: 0;
       overflow: hidden;
       transition: height 0.3s ease; /* Adding a smooth transition effect */
-      background-color: black;
-      padding: 10px;
+    background-color: black;
+    padding: 10px;
 }
 
 	
