@@ -8,14 +8,24 @@
 /*--------------------------------------------------------------
 # General
 --------------------------------------------------------------*/
+.code-button {
+    background-color: #17293b;
+    color: white;
+    font-weight: bold;
+    width: 100%;
+    padding: 1rem 0;
+    font-size: 2vw;
+}
+
 #expandableDiv {
       display: none;
       height: 0;
       overflow: hidden;
       transition: height 0.3s ease; /* Adding a smooth transition effect */
-      background-color: lightgray;
+      background-color: black;
       padding: 10px;
 }
+
 	
 .code-sample {
   background-color: #f9f9f9;
