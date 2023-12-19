@@ -8,6 +8,18 @@
 /*--------------------------------------------------------------
 # General
 --------------------------------------------------------------*/
+
+.progress {
+    display: -webkit-box !important;
+    display: -ms-flexbox !important;
+    display: flex !important;
+    height: 1rem !important;
+    overflow: hidden !important;
+    font-size: .75rem !important;
+    background-color: #F6F3ED !important;
+    border-radius: 0.25rem !important;
+}
+
 .code-button {
     background-color: #17293b;
     color: white;
@@ -534,10 +546,10 @@ section .container {
 }
 
 .skills .progress-bar {
-  width: 1px;
-  height: 10px;
-  transition: .9s;
-  background-color: #1c7d32;
+    width: 1px;
+    /*height: 10px;*/
+    transition: .9s;
+    background-color: #12d640;
 }
 
 /*--------------------------------------------------------------
