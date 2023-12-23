@@ -29,7 +29,7 @@ footer{
     }
 
 .social-icon {
-    color: #E54C44;
+    color: #FFFCEF;
     font-size: 2rem;
     display: block;
     text-align: center;
@@ -238,9 +238,9 @@ hr.item-separator {
     top: 50%; /* Adjust this value to change the vertical position */
     left: 0;
     transform: translateY(-50%);
-    background-color: rgba(246, 243, 237, 0.1);
+    border: 1px solid #FFFCEF;
     z-index: 1000;
-    border-radius : .5rem;
+    border-radius: .5rem;
 }
 
 
