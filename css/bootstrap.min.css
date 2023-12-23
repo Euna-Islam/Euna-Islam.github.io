@@ -3113,15 +3113,12 @@ input[type=button].btn-block, input[type=reset].btn-block, input[type=submit].bt
 
     .collapse.show {
         text-align: center;
+        width: 100%;
         display: block;
         position: fixed;
         z-index: 9999;
-        top: 100px;
-        right: 15px;
-        left: 15px;
-        bottom: 15px;
-        background-color: #020217e3;
-        border: white 1px solid;
+        top:10vh;
+        background-color: #E54C44;
     }
 
 tr.collapse.show {
