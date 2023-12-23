@@ -8923,10 +8923,10 @@ a.bg-dark:focus, a.bg-dark:hover, button.bg-dark:focus, button.bg-dark:hover {
 }
 
 .text-white {
-    color: #F6F3ED !important
+    color: #E54C44 !important
 }
     .text-white:hover {
-        color: #CAFF00 !important;
+        color: #F1C5F4 !important;
     }
 
 .text-primary {
