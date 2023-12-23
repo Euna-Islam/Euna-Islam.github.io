@@ -2739,23 +2739,23 @@ a.btn.disabled, fieldset:disabled a.btn {
     }
 
     .btn-light.focus, .btn-light:focus {
-        box-shadow: 0 0 0 .2rem #CAFF00
+        color: #020217;
+        background-color: #CAFF00;
     }
 
     .btn-light.disabled, .btn-light:disabled {
-        color: #212529;
-        background-color: #f8f9fa;
-        border-color: #f8f9fa
+        color: #020217;
+        background-color: #CAFF00;
     }
 
     .btn-light:not(:disabled):not(.disabled).active, .btn-light:not(:disabled):not(.disabled):active, .show > .btn-light.dropdown-toggle {
-        color: #212529;
-        background-color: #dae0e5;
-        border-color: #d3d9df
+        color: #020217;
+        background-color: #CAFF00;
     }
 
         .btn-light:not(:disabled):not(.disabled).active:focus, .btn-light:not(:disabled):not(.disabled):active:focus, .show > .btn-light.dropdown-toggle:focus {
-            box-shadow: 0 0 0 .2rem rgba(248,249,250,.5)
+            color: #020217;
+            background-color: #CAFF00;
         }
 
 .btn-dark {
@@ -2770,23 +2770,23 @@ a.btn.disabled, fieldset:disabled a.btn {
     }
 
     .btn-dark.focus, .btn-dark:focus {
-        box-shadow: 0 0 0 .2rem rgba(52,58,64,.5)
+        color: #fff;
+        background-color: #E54C44;
     }
 
     .btn-dark.disabled, .btn-dark:disabled {
         color: #fff;
-        background-color: #343a40;
-        border-color: #343a40
+        background-color: #E54C44;
     }
 
     .btn-dark:not(:disabled):not(.disabled).active, .btn-dark:not(:disabled):not(.disabled):active, .show > .btn-dark.dropdown-toggle {
         color: #fff;
-        background-color: #1d2124;
-        border-color: #171a1d
+        background-color: #E54C44;
     }
 
         .btn-dark:not(:disabled):not(.disabled).active:focus, .btn-dark:not(:disabled):not(.disabled):active:focus, .show > .btn-dark.dropdown-toggle:focus {
-            box-shadow: 0 0 0 .2rem rgba(52,58,64,.5)
+            color: #fff;
+            background-color: #E54C44;
         }
 
 .btn-outline-primary {
