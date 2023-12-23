@@ -1,7 +1,7 @@
-/*COLORS #F1C5F4 #FFFCEF #E54C44*/
+/*COLORS #F1CF54 #FFFCEF #E54C44*/
 
 body {
-    padding-top: 10vh;
+    padding-top: 10rem;
     overflow-x: hidden;
     width: 100%;
     margin: 0;
@@ -96,7 +96,6 @@ footer{
 
 Section{
     width:100%;
-    margin: 3rem 0;
 }
 
 hr.section-separator {
@@ -281,4 +280,10 @@ button {
     color: red;
     background-color: transparent;
     text-decoration: underline;
+}
+
+.section-title {
+    color: #F1CF54;
+    background-color: #E54C44;
+    padding: 3rem 0;
 }

@@ -5081,9 +5081,8 @@ tbody.collapse.show {
     height: 1rem;
     overflow: hidden;
     font-size: .75rem;
-    background-color: #F6F3ED;
+    background-color: #FFFCEF;
     border-radius: .25rem
-
 }
 
 .progress-bar {
@@ -5099,9 +5098,8 @@ tbody.collapse.show {
     justify-content: center;
     color: #000;
     text-align: center;
-    background-color: #CAFF00;
+    background-color: #E54C44;
     transition: width .6s ease;
-    
 }
 
 .progress-bar-striped {
