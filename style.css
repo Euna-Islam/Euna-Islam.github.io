@@ -20,14 +20,14 @@ footer{
 }
 
 .social-icon {
-    color: #F6F3ED;
+    color: #E54C44;
     font-size: 2rem;
     display: block;
     text-align: center;
 }
 
     .social-icon:hover {
-        color: #CAFF00;
+        color: #000;
     }
 
     .big-title{
