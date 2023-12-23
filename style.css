@@ -3,9 +3,14 @@
 body {
     padding-top: 10rem;
     overflow-x: hidden;
+    overflow-y: scroll;
     width: 100%;
     margin: 0;
+    background-image: url('img/pattern.png');
+    background-repeat: repeat;
+    scroll-snap-type: y proximity;
 }
+
 
 /*.about-me{
     font-size: clamp(30px, 2vw, 50px);
@@ -94,8 +99,9 @@ footer{
     
 }
 
-Section{
-    width:100%;
+Section {
+    width: 100%;
+    scroll-snap-align: start;
 }
 
 hr.section-separator {
