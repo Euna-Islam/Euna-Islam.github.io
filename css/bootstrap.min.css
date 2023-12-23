@@ -59,13 +59,13 @@ article, aside, dialog, figcaption, figure, footer, header, hgroup, main, nav, s
 
 body {
     margin: 0;
-    font-family: 'Montserrat';
+    font-family: 'Rubik';
     font-size: 1rem;
     font-weight: 400;
     line-height: 1.5;
-    color: #F6F3ED;
+    color: #000;
     text-align: left;
-    background-color: #020217
+    background-color: #F1CF54
 }
 
 [tabindex="-1"]:focus {
