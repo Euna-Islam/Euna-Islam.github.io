@@ -1,0 +1,195 @@
+body {
+    padding-top: 8vh;
+}
+
+.about-me{
+    font-size: clamp(30px, 2vw, 50px);
+}
+
+Section{
+    width:100%;
+    margin: 3rem 0;
+}
+
+hr.section-separator {
+    border: .01rem solid #F6F3ED;
+
+}
+
+hr.nav-border {
+    border: .1rem solid #F6F3ED;
+}
+
+hr.item-separator {
+    border: .01rem solid #CAFF00;
+
+}
+
+.portfolio-image {
+    background-color: transparent;
+}
+
+.portfolio-name{
+    background-color:transparent;
+}
+
+.portfolio-item{
+    width:100%;
+}
+
+
+
+.item-number{
+    font-size: 5rem;
+    font-style:italic;
+    font-weight:bold;
+    margin: 2rem;
+}
+.item-text {
+    margin: 2rem;
+}
+.portfolio-title{
+    padding-top :1rem;
+    padding-left :2rem;
+    padding-bottom :.1rem;
+}
+.portfolio-role {
+    font-size: clamp(20px, 1vw, 30px);
+}
+.portfolio-type {
+    font-size: clamp(20px, 1vw, 30px);
+}
+
+.view-game-btn {
+    color: #F6F3ED;
+    background-color: transparent;
+    border-color: #CAFF00;
+}
+    .view-game-btn:hover {
+        color: #020217;
+        background-color: #CAFF00;
+        border-color: #CAFF00;
+    }
+
+    .view-game-btn:focus {
+        color: #020217;
+        background-color: #CAFF00;
+        border-color: #CAFF00;
+    }
+
+.email-me-btn {
+    color: #F6F3ED;
+    background-color: transparent;
+    border-color: #CAFF00;
+}
+
+    .email-me-btn:hover {
+        color: #020217;
+        background-color: #CAFF00;
+        border-color: #CAFF00;
+    }
+    .email-me-btn:focus {
+        color: #020217;
+        background-color: #CAFF00;
+        border-color: #CAFF00;
+    }
+
+.custom-link {
+    font-size: 2em;
+    font-style: italic;
+    font-weight:900;
+    color: #F6F3ED;
+    transition: color 0.3s; /* Smooth transition for color change */
+}
+
+    .custom-link:hover {
+        color: #CAFF00;
+        text-decoration: none;
+    }
+
+.hover-zoom {
+    overflow: hidden;
+    border-radius: 1.25rem;
+}
+
+
+.hover-zoom img {
+    transition: transform 0.3s ease-in-out; /* Add a smooth transition effect */
+}
+
+.hover-zoom:hover img {
+    transform: scale(1.01); /* Adjust the scale factor for the desired zoom level */
+}
+
+.current-page {
+    color: #CAFF00 !important;
+}
+
+.contact-box {
+    border: .1em solid #CAFF00;
+    color: #F6F3ED;
+    border-radius: 1.25rem;
+}
+    .contact-box:hover {
+        background-color: #CAFF00;
+        color: #020217; /* Change the background color on hover if needed */
+    }
+
+.custom-notification {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    z-index: 1000;
+    display: none;
+    padding: 10px;
+    background-color: #CAFF00;
+    color: #020217;
+    text-align: center;
+    opacity: 1;
+    transition: opacity 0.5s ease-in-out;
+}
+
+
+
+/* Style for the social media contact bar */
+.social-bar {
+    position: fixed;
+    top: 50%; /* Adjust this value to change the vertical position */
+    left: 0;
+    transform: translateY(-50%);
+    background-color: rgba(246, 243, 237, 0.1);
+    z-index: 1000;
+    border-radius : .5rem;
+}
+
+
+.social-icon {
+    color: #F6F3ED;
+    font-size: 2rem;
+    display: block;
+    text-align: center;
+}
+
+    .social-icon:hover {
+        color: #CAFF00;
+    }
+
+.vr{
+    border-right : 1px solid #F6F3ED;
+}
+
+
+/* Customize the button */
+.custom-button {
+    color: #F6F3ED; /* Text color */
+    background-color: transparent; /* Background color */
+    border: 2px solid #CAFF00; /* Border color */
+    padding: 15px 30px; /* Increase padding for larger size */
+    font-size: 1.2em; /* Increase font size */
+}
+
+    .custom-button:hover {
+        background-color: #CAFF00; /* Hover background color */
+        color: #020217; /* Hover text color */
+    }

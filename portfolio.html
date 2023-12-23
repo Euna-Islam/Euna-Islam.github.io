@@ -1,85 +1,155 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>Ahmed Pasha Faisal</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+    <script src="https://kit.fontawesome.com/0f5d6638da.js" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>$(function () {
+    $("#navigation-bar").load("https://ahmedpashafaisal.github.io/navigation-bar.html");
+    $("#social-media-sidebar").load("https://ahmedpashafaisal.github.io/social-media-sidebar.html");
+    $("#social-bar").load("https://ahmedpashafaisal.github.io/social-bar.html");
+    $("footer").load("https://ahmedpashafaisal.github.io/footer.html");
+        });</script>
+</head>
+<body class="portfolio-page">
 
-<div class="section-title">
-    <h2>Projects</h2>
-</div>
+    <!--Horizontal Social Bar-->
+    <div id="social-bar"></div>
 
-<div class="row">
-    <div class="col-lg-12 d-flex justify-content-center">
-        <ul id="portfolio-flters">
-            <li data-filter="*" class="filter-active">All</li>
-            <li data-filter=".games">Games</li>
-            <li data-filter=".system">System</li>
-        </ul>
+    <!-- Social Media Contact Bar -->
+    <div class="social-bar px-1" id="social-media-sidebar">
+
     </div>
-</div>
 
-<div class="row portfolio-container">
+    <div id="navigation-bar">
 
-    <div class="col-lg-4 col-md-6 portfolio-item games">
-        <center><h4>After The End</h4></center>
-        <div class="portfolio-wrap">
-            <img src="assets/img/project/after-the-end.png" class="img-fluid" alt="">
-            <div class="portfolio-info">
-                <h4>Made in Ludum Dare 53</h4>
-                <div class="portfolio-links">
-                    <a href="projects/after-the-end.html" data-gall="portfolioDetailsGallery" data-vbtype="iframe" class="venobox" title="Project Details"><i class="bx bx-info-circle"></i></a>
+    </div>
+
+    <hr class="section-separator my-0">
+
+    <!-- portfolio Title-->
+    <section class="section-title">
+        <div class="container my-3">
+            <div class="row text-center">
+                <div class="col-12">
+                    <h1 class="font-weight-bold" style="font-style:italic;">PORTFOLIO</h1>
                 </div>
             </div>
         </div>
-    </div>
+    </section>
 
-    <div class="col-lg-4 col-md-6 portfolio-item games">
-        <center><h4>The Return</h4></center>
-        <div class="portfolio-wrap">
-            <img src="assets/img/project/salmon-run.png" class="img-fluid" alt="">
-            <div class="portfolio-info">
-                <h4>Made in Global Game Jam</h4>
-                <div class="portfolio-links">
-                    <a href="projects/salmonrun.html" data-gall="portfolioDetailsGallery" data-vbtype="iframe" class="venobox" title="Project Details"><i class="bx bx-info-circle"></i></a>
+    <hr class="section-separator my-0">
+
+    <!-- portfolio Gallery-->
+    <section class="portfolio-gallery">
+        <div class="container-fluid">
+            <div class="row mx-2">
+                <!-- item-1-->
+                <div class="col-lg-6 col-sm-12 col-12 my-2">
+                    <a href="https://ahmedpashafaisal.github.io/magic-mineral.html" class="gallery-link">
+                        <div class="bg-image hover-zoom my-2">
+                            <img src="Images/Portfolio/magic-mineral.png" class="img-fluid rounded p-2  my-2" alt="Magic Mineral" />
+                        </div>
+                    </a>
+                    <h1 class="gallery-title text-uppercase font-italic font-weight-bold px-2">Magic Mineral</h1>
+                    <p class="gallery-role px-2">Concept, Creative Direction, Art Direction, Development</p>
+                    <a href="https://ahmedpashafaisal.github.io/magic-mineral.html">
+                        <button type="button" class="btn-lg view-game-btn">View Game</button>
+                    </a>
                 </div>
+
+                <!-- item-2-->
+                <div class="col-lg-6 col-sm-12 col-12 my-2">
+                    <a href="https://ahmedpashafaisal.github.io/the-unwanted.html" class="gallery-link">
+                        <div class="bg-image hover-zoom my-2">
+                            <img src="Images/Portfolio/the-unwanted.png" class="img-fluid rounded p-2  my-2" alt="The Unwanted" />
+                        </div>
+                    </a>
+                    <h1 class="gallery-title text-uppercase font-italic font-weight-bold px-2">The Unwanted</h1>
+                    <p class="gallery-role px-2">Concept, Art Direction, Development</p>
+                    <a href="https://ahmedpashafaisal.github.io/the-unwanted.html">
+                        <button type="button" class="btn-lg view-game-btn">View Game</button>
+                    </a>
+                </div>
+
+                <!-- item-3-->
+                <div class="col-lg-6 col-sm-12 col-12 my-2">
+                    <a href="https://ahmedpashafaisal.github.io/the-return.html" class="gallery-link">
+                        <div class="bg-image hover-zoom my-2">
+                            <img src="Images/Portfolio/the-return.png" class="img-fluid rounded p-2  my-2" alt="The Return" />
+                        </div>
+                    </a>
+                    <h1 class="gallery-title text-uppercase font-italic font-weight-bold px-2">The Return</h1>
+                    <p class="gallery-role px-2">Concept, Design</p>
+                    <a href="https://ahmedpashafaisal.github.io/the-return.html">
+                        <button type="button" class="btn-lg view-game-btn">View Game</button>
+                    </a>
+                </div>
+
+                <!-- item-4-->
+                <div class="col-lg-6 col-sm-12 col-12 my-2">
+                    <a href="https://ahmedpashafaisal.github.io/after-the-end.html" class="gallery-link">
+                        <div class="bg-image hover-zoom my-2">
+                            <img src="Images/Portfolio/after-the-end.png" class="img-fluid rounded p-2  my-2" alt="After The End" />
+                        </div>
+                    </a>
+                    <h1 class="gallery-title text-uppercase font-italic font-weight-bold px-2">After The End</h1>
+                    <p class="gallery-role px-2">Concept, Art & Design</p>
+                    <a href="https://ahmedpashafaisal.github.io/after-the-end.html">
+                        <button type="button" class="btn-lg view-game-btn">View Game</button>
+                    </a>
+                </div>
+
+                <!-- item-5-->
+                <div class="col-lg-6 col-sm-12 col-12 my-2">
+                    <a href="https://ahmedpashafaisal.github.io/space-cricket.html" class="gallery-link">
+                        <div class="bg-image hover-zoom my-2">
+                            <img src="Images/Portfolio/space-cricket.png" class="img-fluid rounded p-2  my-2" alt="Space Cricket" />
+                        </div>
+                    </a>
+                    <h1 class="gallery-title text-uppercase font-italic font-weight-bold px-2">Space Cricket</h1>
+                    <p class="gallery-role px-2">Concept, UI/UX, Art & Design</p>
+                    <a href="https://ahmedpashafaisal.github.io/space-cricket.html">
+                        <button type="button" class="btn-lg view-game-btn">View Game</button>
+                    </a>
+                </div>
+
+                <!-- item-5-->
+                <div class="col-lg-6 col-sm-12 col-12 my-2">
+                    <a href="https://ahmedpashafaisal.github.io/toony-car.html" class="gallery-link">
+                        <div class="bg-image hover-zoom my-2">
+                            <img src="Images/Portfolio/toony-car.png" class="img-fluid rounded p-2  my-2" alt="Toony Car" />
+                        </div>
+                    </a>
+                    <h1 class="gallery-title text-uppercase font-italic font-weight-bold px-2">Toony Car</h1>
+                    <p class="gallery-role px-2">UI/UX, 3D-Art & Design</p>
+                    <a href="https://ahmedpashafaisal.github.io/toony-car.html">
+                        <button type="button" class="btn-lg view-game-btn">View Game</button>
+                    </a>
+                </div>
+
+
+
             </div>
         </div>
-    </div>
+    </section>
 
-    <div class="col-lg-4 col-md-6 portfolio-item games">
-        <center><h4>Space Cricket</h4></center>
-        <div class="portfolio-wrap">
-            <img src="assets/img/project/space-cricket.png" class="img-fluid" alt="">
-            <div class="portfolio-info">
-                <h4>Professional Project</h4>
-                <div class="portfolio-links">
-                    <a href="projects/space-cricket.html" data-gall="portfolioDetailsGallery" data-vbtype="iframe" class="venobox" title="Project Details"><i class="bx bx-info-circle"></i></a>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="col-lg-4 col-md-6 portfolio-item system">
-        <center><h4>Process Management</h4></center>
-        <div class="portfolio-wrap">
-            <img src="assets/img/project/process-manager.png" class="img-fluid" alt="">
-            <div class="portfolio-info">
-                <h4>A simple process observer with Rust</h4>
-                <div class="portfolio-links">
-                    <a href="projects/process-manager.html" data-gall="portfolioDetailsGallery" data-vbtype="iframe" class="venobox" title="Project Details"><i class="bx bx-info-circle"></i></a>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="col-lg-4 col-12 portfolio-item games">
-        <center><h4>Four Horseman</h4></center>
-        <div class="portfolio-wrap">
-            <img src="assets/img/project/four-horseman.png" class="img-fluid" alt="">
-            <div class="portfolio-info">
-                <h4>MMORPG/Professional Project</h4>
-                <div class="portfolio-links">
-                    <a href="projects/four-horseman.html" data-gall="portfolioDetailsGallery" data-vbtype="iframe" class="venobox" title="Project Details"><i class="bx bx-info-circle"></i></a>
-                </div>
-            </div>
-        </div>
-    </div>
+    <hr class="section-separator my-0">
 
 
-</div>
-      
+    <!-- Footer -->
+    <footer class="text-center text-white" style="background-color: #020217">
+        
+    </footer>
+    <!-- Footer -->
+
+</body>
+</html>

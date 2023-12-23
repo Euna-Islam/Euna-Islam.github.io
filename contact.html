@@ -1,29 +1,129 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>Ahmed Pasha Faisal</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+    <script src="https://kit.fontawesome.com/0f5d6638da.js" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="script.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>$(function () {
+    $("#navigation-bar").load("https://ahmedpashafaisal.github.io/navigation-bar.html");
+    $("#social-media-sidebar").load("https://ahmedpashafaisal.github.io/social-media-sidebar.html");
+    $("footer").load("https://ahmedpashafaisal.github.io/footer.html");
+        });</script>
+</head>
+<body class="contact-page">
 
-<div class="section-title">
-	<h2>Contact</h2>
-</div>
 
-<div class="row mt-2">
+    <!-- Social Media Contact Bar -->
+    <div class="social-bar px-1" id="social-media-sidebar">
 
-	<div class="col-md-6 mt-4 mt-md-0 d-flex align-items-stretch">
-		<div class="info-box">
-			<i class="bx bx-envelope"></i>
-			<h3>Email</h3>
-			<p>euna.islam@gmail.com</p>
-			<p>euna.islam@ut.ee</p>
-		</div>
-	</div>
+    </div>
 
-	<div class="col-md-6 mt-4 mt-md-0 d-flex align-items-stretch">
-		<div class="info-box">
-			<i class="bx bx-share-alt"></i>
-			<h3>Social Profiles</h3>
-			<div class="social-links">
-				<a href="https://www.linkedin.com/in/euna-islam/" target="_blank" class="linkedin"><i class="bx bxl-linkedin"></i></a>
-				<a href="https://github.com/Euna-Islam" target="_blank" class="github"><i class="bx bxl-github"></i></a>
-				<a href="mailto:euna.islam@gmail.com" target="_blank" class="google"><i class="bx bxl-google"></i></a>
+    <!-- Navigation Bar -->
+    <div id="navigation-bar">
 
-			</div>
-		</div>
-	</div>
-</div>
+    </div>
+
+
+    <hr class="section-separator my-0">
+
+    <!-- Section Title-->
+    <section id="contact" class="section-title">
+        <div class="container my-3">
+            <div class="row text-left">
+                <div class="col-12">
+                    <h1 class="font-weight-bold" style="font-style:italic;">Contact</h1>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <hr class="section-separator my-0">
+
+    <section class="mb-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-12 p-3">
+                    <div class="text-center contact-box py-5" onclick="copyToClipboard('ahmedpashafaial@gmail.com')" data-toggle="tooltip" data-placement="top" title="Click to Copy">
+                        <i class="fas fa-envelope fa-2x d-block mb-3"></i>
+                        ahmedpashafaial@gmail.com
+                    </div>
+                </div>
+                <div class="col-lg-4 col-12 p-3">
+                    <div class="text-center contact-box py-5" onclick="copyToClipboard('+372 53638981')" data-toggle="tooltip" data-placement="top" title="Click to Copy">
+                        <i class="fas fa-phone fa-2x d-block mb-3"></i>
+                        +372 53638981
+                    </div>
+                </div>
+                <div class="col-lg-4 col-12 p-3">
+                    <div class="text-center contact-box py-5" onclick="copyToClipboard('F. Kuhlbarsi 1, Tallinn, Estonia')" data-toggle="tooltip" data-placement="top" title="Click to Copy">
+                        <i class="fas fa-location-dot fa-2x d-block mb-3"></i>
+                        F. Kuhlbarsi 1, Tallinn, Estonia
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Custom Notification Element -->
+        <div class="custom-notification" id="notification"></div>
+
+    </section>
+
+    <!-- Footer -->
+    <footer class="text-center text-white" style="background-color: #020217">
+        
+    </footer>
+    <!-- Footer -->
+
+    <script>function copyToClipboard(text) {
+            // Create a temporary input element
+            var tempInput = document.createElement('input');
+            tempInput.value = text;
+            document.body.appendChild(tempInput);
+
+            // Select the text in the input
+            tempInput.select();
+            tempInput.setSelectionRange(0, 99999); // For mobile devices
+
+            // Copy the selected text to the clipboard
+            document.execCommand('copy');
+
+            // Remove the temporary input
+            document.body.removeChild(tempInput);
+
+            // Show custom notification
+            showNotification('Text copied to clipboard: ' + text);
+        }
+
+        function showNotification(message) {
+            var notificationElement = document.getElementById('notification');
+            notificationElement.textContent = message;
+            notificationElement.style.display = 'block';
+
+            // Fade out the notification after 2 seconds (adjust the delay as needed)
+            setTimeout(function () {
+                notificationElement.style.opacity = 0;
+            }, 2000); // 2000 milliseconds (2 seconds)
+
+            // Hide the notification after the fade-out animation completes
+            setTimeout(function () {
+                notificationElement.style.display = 'none';
+                notificationElement.style.opacity = 1; // Reset opacity for the next display
+            }, 2500); // 2500 milliseconds (2.5 seconds)
+        }</script>
+
+    <script>// Initialize Bootstrap tooltips
+        $(function () {
+            $('[data-toggle="tooltip"]').tooltip()
+        })</script>
+
+</body>
+</html>
