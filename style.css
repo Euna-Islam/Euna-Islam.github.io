@@ -1,5 +1,9 @@
 /*COLORS #F1CF54 #FFFCEF #E54C44*/
 
+.add-margin {
+	padding-top: 15rem !important;
+}
+
 body {
     padding-top: 10rem;
     overflow-x: hidden;
