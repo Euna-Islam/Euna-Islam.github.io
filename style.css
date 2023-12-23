@@ -17,7 +17,11 @@ footer{
 }
 .social {
     margin: 0 1.5rem;
+    color: #E54C44;
 }
+    .social:hover {
+        color: #000;
+    }
 
 .social-icon {
     color: #E54C44;
