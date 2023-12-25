@@ -1,4 +1,7 @@
 /*COLORS Yellow #F1CF54 white #FFFCEF red #E54C44*/
+.progress-bar {
+    color: #FFFCEF !important;
+}
 
 .add-margin {
 	padding-top: 15rem !important;
