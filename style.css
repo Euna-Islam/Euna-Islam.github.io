@@ -1,4 +1,4 @@
-/*COLORS #F1CF54 #FFFCEF #E54C44*/
+/*COLORS Yellow #F1CF54 white #FFFCEF red #E54C44*/
 
 .add-margin {
 	padding-top: 15rem !important;
@@ -210,13 +210,13 @@ hr.item-separator {
 }
 
 .contact-box {
-    border: .1em solid #CAFF00;
-    color: #F6F3ED;
+    border: .1em solid #E54C44;
+    color: #E54C44;
     border-radius: 1.25rem;
 }
     .contact-box:hover {
-        background-color: #CAFF00;
-        color: #020217; /* Change the background color on hover if needed */
+        background-color: #E54C44;
+        color: #FFFCEF; /* Change the background color on hover if needed */
     }
 
 .custom-notification {
@@ -227,15 +227,12 @@ hr.item-separator {
     z-index: 1000;
     display: none;
     padding: 10px;
-    background-color: #CAFF00;
-    color: #020217;
+    background-color: #F1CF54;
+    color: #E54C44;
     text-align: center;
     opacity: 1;
     transition: opacity 0.5s ease-in-out;
 }
-
-
-
 /* Style for the social media contact bar */
 .social-bar {
     position: fixed;
