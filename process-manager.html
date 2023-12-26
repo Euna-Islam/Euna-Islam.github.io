@@ -52,7 +52,7 @@
             <div class="row">
                 <div class="col-xl-12 text-center">
                     <h1 class="name mx-5 font-weight-bold" style="color: #E54C44; font-size: 6vw;">
-                        The Return
+                        Process Monitor
                     </h1>
 
                 </div>
@@ -66,13 +66,12 @@
             <div class="row">
                 <div class="col-md-6 px-5" style="border-right: #F6F3ED 1px solid">
                     <div class="role">
-                        <h5>ROLE</h5>
-                        <p>Developer</p>
+                        <h5>Project</h5>
+                        <p>Personal</p>
                         <br />
                         <h5>DESCRIPTION</h5>
                         <p>
-                            “Embark on a journey where mother nature awaits “The Run” to arrive at their roots” A game jam project submitted on Global Game Jam, Pärnu, 2023
-                            <br />
+                            Console app for finding project matrix with Rust<br />
                         </p>
                     </div>
                 </div>
@@ -82,14 +81,14 @@
                         <h5>YEAR</h5>
                         <p>2023</p>
                         <br />
-                        <h5>GENRE</h5>
+                        <h5>Type</h5>
                         <p>
-                            Casual
+                            Console App
                         </p>
                         <br />
-                        <h5>PLATFORM</h5>
+                        <h5>Language</h5>
                         <p>
-                            Web
+                            Rust
                         </p>
                     </div>
                 </div>
@@ -112,108 +111,93 @@
             <div class="row text-center">
                 <div class="col-12">
                     <div class="text-center my-2">
-                        <strong>Check out the project code : <a href="https://github.com/Euna-Islam/salmon-run" target="_blank">The Return</a></strong>
+                        <strong>Check out the project code : <a href="https://github.com/Euna-Islam/process-monitor" target="_blank">Process Monitor</a></strong>
                     </div>
 
-                    <button onclick="toggleDiv()" class="code-button">&lt;/&gt; Code Snippet: Object Pooling, getting and giving back to pool</button>
+                    <button onclick="toggleDiv()" class="code-button">&lt;/&gt; Code Snippet: Using external crate, vector, map and sort</button>
                     <div id="expandableDiv" class="col-md-12 col-12 project-body code-sample" style="display: none;">
 
-                        <div class="language-c-sharp text-left">
+                        <div class="text-left">
                             <pre>
-                            <code class="text-left language-cs">
-public class FlockController : MonoBehaviour
-{
-    [Header("Fish Flock Creation Variables")]
-    [Tooltip("Fish Prefab")]
-    [SerializeField]
-    private GameObject FishPrefab;
+                                <code class="text-left language-cs">
+/* SPDX-License-Identifier: Apache-2.0 */
 
-    [Tooltip("Max no of Fish Allowed")]
-    [SerializeField]
-    private IntVariable MaxNoOfFish;
+//import external crate for system information
+extern crate sysinfo;
 
-    [Tooltip("Max Width For Initializing The Flock")]
-    [SerializeField]
-    private FloatVariable MaxWidth;
+//import custom struct ProcessInfo
+use crate::models::process_info::ProcessInfo;
 
-    [Tooltip("Max Height For Initializing The Flock")]
-    [SerializeField]
-    private FloatVariable MaxHeight;
+//import needed traits from external crate sysinfo
+use sysinfo::{ProcessExt, System, SystemExt};
 
-    [Header("Events")]
-    [Tooltip("Game lose event")]
-    [SerializeField]
-    private GameEvent GameLoseEvent;
-
-    [Tooltip("Obstacle hit event")]
-    [SerializeField]
-    private GameEvent OnObstacleHit;
-
-    //Fish Pool
-    private ObjectPool<GameObject> FishPool;
-
-    private void Start()
+/*
+ * Get process information
+ * Map it to Vector of ProcessInfo
+ */
+pub fn get_process_info() -> Vec<ProcessInfo>
     {
-        InitializeFishPool();
-        ActivateAll();
-    }
+    let mut sys = System::new_all();
+    //refreshing twice for accurate data about CPU
+    sys.refresh_all();
+    sys.refresh_all();
+    let process_list: Vec<ProcessInfo>
+        = sys
+        .processes()
+        .iter()
+        .map(|(pid, process)| ProcessInfo {
+            name: process.name().to_string(),
+            id: pid.to_string(),
+            cpu_usage: process.cpu_usage().to_string(),
+            status: process.status().to_string(),
+            memory_usage: process.memory().to_string(),
+        })
+        .collect();
 
-    ///&lt;summary&gt;
-    /// Initialize fish pool
-    ///&lt;/summary&gt;
-    void InitializeFishPool() {
-        //Initialize the pool
-        FishPool = new ObjectPool<GameObject>(() =>
-        {
-            GameObject newFish = Instantiate(FishPrefab);
-            newFish.transform.parent = transform;
-            return newFish; 
-        },
-        fish => { fish.SetActive(true); },
-        fish => { fish.SetActive(false); },
-        fish => { Destroy(fish); },
-        false,
-        MaxNoOfFish.Value,
-        MaxNoOfFish.Value
-        );
-    }
-
-    ///&lt;summary&gt;
-    /// Activate all fish from pool
-    ///&lt;/summary&gt;
-    public void ActivateAll() {
-
-        int max = MaxNoOfFish.Value;
-        while (max > 0) {
-            GameObject fish = FishPool.Get();
-            fish.SetActive(true);
-            Vector3 randomOffset = new Vector3(Random.Range(-MaxWidth.Value, MaxWidth.Value), Random.Range(-MaxHeight.Value, MaxHeight.Value), 0f);
-            Vector3 spawnPosition = FishPrefab.transform.position + randomOffset;
-            fish.transform.position = spawnPosition;
-            max--;
-        }
-    }
-    ///&lt;summary&gt;
-    /// Release given fish to pool
-    ///&lt;summary&gt;
-    public void ReleaseFish()
-    {
-        if(DeathRow.FishDeathRow.Count != 0)
-            FishPool.Release(DeathRow.FishDeathRow.Dequeue());
-        //check remaining amount
-        if (FishPool.CountActive == 0) {
-            GameLoseEvent.Raise();
-        }
-    }
-    ///&lt;summary&gt;
-    /// Release all fish to pool
-    ///&lt;/summary&gt;
-    public void ReleaseAll() {
-
-        FishPool.Clear();
-    }
+        process_list
 }
-						      </code>
+
+/*
+ * get process info
+ * sort them by memory usage
+ */
+pub fn sort_by_memory() -> Vec<ProcessInfo>
+{
+    let mut process_list: Vec<ProcessInfo>
+        = get_process_info();
+
+    process_list.sort_by(|a, b| {
+        let mem1 = a.memory_usage.parse::<u64>
+                   ().unwrap_or(0);
+        let mem2 = b.memory_usage.parse::<u64>
+                  ().unwrap_or(0);
+        mem2.cmp(&mem1)
+        }
+   );
+
+   process_list
+}
+
+/*
+ * get process info
+ * sort them by cpu usage
+ */
+pub fn sort_by_cpu_usage() -> Vec<ProcessInfo>
+{
+    let mut process_list: Vec<ProcessInfo>
+        = get_process_info();
+
+    process_list.sort_by(|a, b| {
+        let cpu1 = a.cpu_usage.parse::<u64>
+                    ().unwrap_or(0);
+        let cpu2 = b.cpu_usage.parse::<u64>
+                    ().unwrap_or(0);
+        cpu2.cmp(&cpu1)
+    });
+
+     process_list
+}
+                                </code>
                            </pre>
                         </div>
                     </div>
@@ -283,14 +267,14 @@ public class FlockController : MonoBehaviour
     <div class="container-fluid mx-0">
         <div class="row">
             <div class="col-sm-12 d-flex justify-content-between">
-                <a href="https://euna-islam.github.io/space-cricket.html" class="custom-link">
+                <a href="https://euna-islam.github.io/four-horsemen.html" class="custom-link">
                     <i class="fa-regular fa-circle-left ml-3"></i>
-                    PREVIOUS GAME
+                    PREVIOUS PROJECT
 
                 </a>
 
-                <a href="https://euna-islam.github.io/four-horsemen.html" class="custom-link">
-                    NEXT GAME
+                <a href="https://euna-islam.github.io/after-the-end.html" class="custom-link">
+                    NEXT PROJECT
                     <i class="fa-regular fa-circle-right ml-3"></i>
                 </a>
 

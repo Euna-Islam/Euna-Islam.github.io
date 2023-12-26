@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8" />
-    <title>Euna Islam</title>
+    <title>Euna</title>
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="style.css">
     <link href='https://fonts.googleapis.com/css?family=Rubik' rel='stylesheet'>
@@ -52,7 +52,7 @@
             <div class="row">
                 <div class="col-xl-12 text-center">
                     <h1 class="name mx-5 font-weight-bold" style="color: #E54C44; font-size: 6vw;">
-                        The Return
+                        Dice Simulation
                     </h1>
 
                 </div>
@@ -66,12 +66,15 @@
             <div class="row">
                 <div class="col-md-6 px-5" style="border-right: #F6F3ED 1px solid">
                     <div class="role">
-                        <h5>ROLE</h5>
-                        <p>Developer</p>
+                        <h5>Project</h5>
+                        <p>Personal</p>
                         <br />
                         <h5>DESCRIPTION</h5>
                         <p>
-                            “Embark on a journey where mother nature awaits “The Run” to arrive at their roots” A game jam project submitted on Global Game Jam, Pärnu, 2023
+                            <i class="fas fa-check-square"></i> Max 8 dices can be thrown on the board<br />
+                            <i class="fas fa-check-square"></i> All the dices roll on tap<br />
+                            <i class="fas fa-check-square"></i> The overall score is counted and displayed on top<br />
+                            <i class="fas fa-check-square"></i> You can add/remove dices from the board
                             <br />
                         </p>
                     </div>
@@ -87,10 +90,6 @@
                             Casual
                         </p>
                         <br />
-                        <h5>PLATFORM</h5>
-                        <p>
-                            Web
-                        </p>
                     </div>
                 </div>
             </div>
@@ -112,108 +111,97 @@
             <div class="row text-center">
                 <div class="col-12">
                     <div class="text-center my-2">
-                        <strong>Check out the project code : <a href="https://github.com/Euna-Islam/salmon-run" target="_blank">The Return</a></strong>
+                        <strong>Check out the project code : <a href="https://github.com/Euna-Islam/DiceSimulation" target="_blank">Dice Simulation</a></strong>
                     </div>
 
-                    <button onclick="toggleDiv()" class="code-button">&lt;/&gt; Code Snippet: Object Pooling, getting and giving back to pool</button>
+                    <button onclick="toggleDiv()" class="code-button">&lt;/&gt; Code Snippet: Using RunTime Set, Scriptable Objects and Events</button>
                     <div id="expandableDiv" class="col-md-12 col-12 project-body code-sample" style="display: none;">
 
                         <div class="language-c-sharp text-left">
                             <pre>
-                            <code class="text-left language-cs">
-public class FlockController : MonoBehaviour
+                                <code class="text-left language-cs">
+public class Dice : MonoBehaviour
 {
-    [Header("Fish Flock Creation Variables")]
-    [Tooltip("Fish Prefab")]
-    [SerializeField]
-    private GameObject FishPrefab;
+Rigidbody Rb;
+[Tooltip("Dice score side value")]
+public int DiceScore;
+[Tooltip("List of all sides of a dice")]
+public DiceSide[] DiceSides;
 
-    [Tooltip("Max no of Fish Allowed")]
-    [SerializeField]
-    private IntVariable MaxNoOfFish;
+#region Configuration
+[SerializeField]
+private GameEvent SoundEvent, ScoreEvent;
+[SerializeField]
+private DiceRuntimeSet DiceSet;
+[SerializeField]
+private IntVariable MinTorque, MaxTorque, Force;
+#endregion
 
-    [Tooltip("Max Width For Initializing The Flock")]
-    [SerializeField]
-    private FloatVariable MaxWidth;
+///&lt;summary&gt;
+/// on enable add this object to runtime dice set
+///&lt;/summary&gt;
+private void OnEnable()
+{
+    DiceSet.Add(this);
+}
 
-    [Tooltip("Max Height For Initializing The Flock")]
-    [SerializeField]
-    private FloatVariable MaxHeight;
+///&lt;summary&gt;
+/// on disable remove from runtime dice set
+///&lt;/summary&gt;
+private void OnDisable()
+{
+    DiceSet.Remove(this);
+}
 
-    [Header("Events")]
-    [Tooltip("Game lose event")]
-    [SerializeField]
-    private GameEvent GameLoseEvent;
+void Start()
+{
+    Rb = GetComponent<Rigidbody>();
+    ThrowDice();
+}
 
-    [Tooltip("Obstacle hit event")]
-    [SerializeField]
-    private GameEvent OnObstacleHit;
+///&lt;summary&gt;
+/// throw dice on board
+///&lt;/summary&gt;
+public void ThrowDice()
+{
+    Rb.AddTorque(Random.Range(MinTorque.value, MaxTorque.value), Random.Range(MinTorque.value, MaxTorque.value), Random.Range(MinTorque.value, MaxTorque.value));
+}
 
-    //Fish Pool
-    private ObjectPool<GameObject> FishPool;
-
-    private void Start()
+///&lt;summary&gt;
+/// roll the dice after landing on board
+///&lt;/summary&gt;
+public void RollDice()
+{
+    if (Rb.velocity.magnitude == 0)
     {
-        InitializeFishPool();
-        ActivateAll();
-    }
-
-    ///&lt;summary&gt;
-    /// Initialize fish pool
-    ///&lt;/summary&gt;
-    void InitializeFishPool() {
-        //Initialize the pool
-        FishPool = new ObjectPool<GameObject>(() =>
-        {
-            GameObject newFish = Instantiate(FishPrefab);
-            newFish.transform.parent = transform;
-            return newFish; 
-        },
-        fish => { fish.SetActive(true); },
-        fish => { fish.SetActive(false); },
-        fish => { Destroy(fish); },
-        false,
-        MaxNoOfFish.Value,
-        MaxNoOfFish.Value
-        );
-    }
-
-    ///&lt;summary&gt;
-    /// Activate all fish from pool
-    ///&lt;/summary&gt;
-    public void ActivateAll() {
-
-        int max = MaxNoOfFish.Value;
-        while (max > 0) {
-            GameObject fish = FishPool.Get();
-            fish.SetActive(true);
-            Vector3 randomOffset = new Vector3(Random.Range(-MaxWidth.Value, MaxWidth.Value), Random.Range(-MaxHeight.Value, MaxHeight.Value), 0f);
-            Vector3 spawnPosition = FishPrefab.transform.position + randomOffset;
-            fish.transform.position = spawnPosition;
-            max--;
-        }
-    }
-    ///&lt;summary&gt;
-    /// Release given fish to pool
-    ///&lt;summary&gt;
-    public void ReleaseFish()
-    {
-        if(DeathRow.FishDeathRow.Count != 0)
-            FishPool.Release(DeathRow.FishDeathRow.Dequeue());
-        //check remaining amount
-        if (FishPool.CountActive == 0) {
-            GameLoseEvent.Raise();
-        }
-    }
-    ///&lt;summary&gt;
-    /// Release all fish to pool
-    ///&lt;/summary&gt;
-    public void ReleaseAll() {
-
-        FishPool.Clear();
+    Rb.AddForce(0, Force.value, 0, ForceMode.Force);
+    ThrowDice();
     }
 }
-						      </code>
+
+///&lt;summary&gt;
+/// update dice score after landing
+///&lt;/summary&gt;
+///&lt;param name="sideValue"&gt;dice score side&lt;/param&gt;
+public void UpdateDiceScore(int sideValue)
+{
+    DiceScore = sideValue;
+
+    if (Rb.IsSleeping())
+    {
+    ScoreEvent.Raise();
+    }
+}
+
+void OnTriggerEnter(Collider col)
+{
+    if (col.tag == "Ground")
+    {
+    SoundEvent.Raise();
+    }
+}
+}
+                                </code>
                            </pre>
                         </div>
                     </div>
@@ -246,25 +234,7 @@ public class FlockController : MonoBehaviour
         </ol>
         <div class="carousel-inner">
             <div class="carousel-item active">
-                <img src="Images/screenshots/the-return/1.png" class="d-block w-100" alt="...">
-            </div>
-            <div class="carousel-item" data-interval="2000">
-                <img src="Images/screenshots/the-return/2.png" class="d-block w-100" alt="...">
-            </div>
-            <div class="carousel-item" data-interval="2000">
-                <img src="Images/screenshots/the-return/3.png" class="d-block w-100" alt="...">
-            </div>
-            <div class="carousel-item" data-interval="2000">
-                <img src="Images/screenshots/the-return/4.png" class="d-block w-100" alt="...">
-            </div>
-            <div class="carousel-item" data-interval="2000">
-                <img src="Images/screenshots/the-return/5.png" class="d-block w-100" alt="...">
-            </div>
-            <div class="carousel-item" data-interval="2000">
-                <img src="Images/screenshots/the-return/6.png" class="d-block w-100" alt="...">
-            </div>
-            <div class="carousel-item" data-interval="2000">
-                <img src="Images/screenshots/the-return/7.png" class="d-block w-100" alt="...">
+                <img src="Images/screenshots/dice-simulation/1.png" class="d-block w-100" alt="...">
             </div>
         </div>
         <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
