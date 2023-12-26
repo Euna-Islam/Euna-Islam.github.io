@@ -57,7 +57,7 @@
                     <button class="btn-lg btn-dark filter-button" data-filter="all">All</button>
                     <button class="btn-lg btn-dark filter-button" data-filter="games">Games</button>
                     <button class="btn-lg btn-dark filter-button" data-filter="system">Systems</button>
-                    <button class="btn-lg btn-dark filter-button" data-filter="code-mastery">Code-Mastery</button>
+                    <!--<button class="btn-lg btn-dark filter-button" data-filter="code-mastery">Code-Mastery</button>-->
                     
                 </div>
                 <br/>
@@ -74,7 +74,7 @@
                     </div>
                 </div>
 
-                <div class="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6 filter system my-3">
+                <div class="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6 filter games my-3">
                     <img src="https://euna-islam.github.io/img/project/salmon-run.png" class="card-image-top img-fluid" alt="thumbnail">
 
                     <div class="card-body text-center">
@@ -84,7 +84,7 @@
                     </div>
                 </div>
 
-                <div class="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6 filter system my-3">
+                <div class="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6 filter games my-3">
                     <img src="https://euna-islam.github.io/img/project/four-horseman.png" class="card-image-top img-fluid" alt="thumbnail">
 
                     <div class="card-body text-center">
@@ -104,7 +104,7 @@
                     </div>
                 </div>
 
-                <div class="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6 filter system my-3">
+                <div class="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6 filter games my-3">
                     <img src="https://euna-islam.github.io/img/project/after-the-end.png" class="card-image-top img-fluid" alt="thumbnail">
 
                     <div class="card-body text-center">
@@ -136,5 +136,20 @@
     </footer>
     <!-- Footer -->
 
+    <script>
+        $(document).ready(function () {
+            $('.filter-button').on('click', function () {
+                var filterValue = $(this).data('filter');
+
+                if (filterValue === 'all') {
+                    $('.filter').show();
+                } else {
+                    $('.filter').hide();
+
+                    $('.filter.' + filterValue).show();
+                }
+            });
+        });
+    </script>
 </body>
 </html>
