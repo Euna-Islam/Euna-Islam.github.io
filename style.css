@@ -1,4 +1,8 @@
 /*COLORS Yellow #F1CF54 white #FFFCEF red #E54C44*/
+.returnSize {
+    width: 80vw !important;
+}
+
 pre {
     color: #ffffff;
 }
@@ -100,7 +104,7 @@ footer{
 }
 
     .custom-link:hover {
-        color: #CAFF00;
+        color: #E54C44;
         text-decoration: none;
     }
 
